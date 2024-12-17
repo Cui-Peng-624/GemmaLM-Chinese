@@ -24,7 +24,7 @@ message_str = apply_chat_template(message)
 response = generate_response(model, tokenizer, message_str)
 ```
 
-具体请参考：[model_utils.py](https://github.com/cuipeng/Gemma/blob/main/src/core/utils/model_utils.py)
+具体请参考：[model_utils.py](https://github.com/Cui-Peng-624/GemmaLM-Chinese/tree/main/src/core/utils/model_utils.py)
 
 # 2. 数据集构建
 
@@ -74,15 +74,15 @@ response = generate_response(model, tokenizer, message_str)
 
 比例为：0.2 : 0.4 : 0.4
 
-数据集构建的具体流程请参考：[data_processing/README.md](https://github.com/cuipeng/Gemma/blob/main/src/data_processing/README.md)
+数据集构建的具体流程请参考：[data_processing/README.md](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/data_processing/README.md)
 
 # 3. 模型微调
 
-我们三个 stage 都采用 AdaLoRA 进行微调，并根据 stage 动态调整训练参数，具体请参考：[data_processing/参数选择.md](https://github.com/cuipeng/Gemma/blob/main/src/data_processing/参数选择.md)
+我们三个 stage 都采用 AdaLoRA 进行微调，并根据 stage 动态调整训练参数，具体请参考：[data_processing/参数选择.md](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/data_processing/%E5%8F%82%E6%95%B0%E9%80%89%E6%8B%A9.md)
 
 # 4. 推理
 
-实现了 l2m，self-verification 和 enhanced_solver 三种策略，最终采用了 normal，l2m 和 enhanced_solver 三种推理策略，具体请参考：[adaptive_solver.ipynb](https://github.com/cuipeng/Gemma/blob/main/src/core/utils/adaptive_solver.ipynb)    
+实现了 l2m，self-verification 和 enhanced_solver 三种策略，最终采用了 normal，l2m 和 enhanced_solver 三种推理策略，具体请参考：[adaptive_solver.ipynb](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/core/solvers/adaptive_solver.ipynb)    
 
 # 5. 评估与监控
 
