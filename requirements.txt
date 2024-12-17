@@ -1,0 +1,6 @@
+transformers==4.46.0
+tokenizers==0.20.3
+langchain-core>=0.1.0
+langchain-community>=0.0.10
+langchain_chroma
+chromadb 
