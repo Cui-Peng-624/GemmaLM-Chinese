@@ -86,7 +86,7 @@ response = generate_response(model, tokenizer, message_str)
 
 # 5. 评估与监控
 
-待完成
+待完成，当前的想法请参考：[src/evaluate/README.md](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/evaluate/README.md)
 
 # 6. 未来改进方向
 - RAG：但是我没想好往向量数据库储存什么数据，graphrag 在诗歌创作上是个不错的选择，但由于任务的限制，我们无法采用
