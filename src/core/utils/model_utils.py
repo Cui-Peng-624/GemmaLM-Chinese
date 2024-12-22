@@ -83,9 +83,9 @@ def generate_response(model, tokenizer, prompt, max_new_tokens=512, temperature=
     response_tokens = outputs[0, input_length:]
     
     # 7. 优化model token的检测
-    if response_tokens.size(0) >= 3 and 2516 in response_tokens[:3]:
-        model_token_index = (response_tokens == 2516).nonzero(as_tuple=True)[0][0]
-        response_tokens = response_tokens[model_token_index:]
+    if response_tokens.size(0) >= 3 and 2516 in response_tokens[:3]: # 2516是‘model’的token id
+        model_token_index = (response_tokens == 2516).nonzero(as_tuple=True)[0][0] # 找到'model'这个token的索引
+        response_tokens = response_tokens[model_token_index+2:] # 从“<start_of_turn>model\n”后面开始
     
     # 8. 直接解码tensor，避免额外的列表转换
     response = tokenizer.decode(response_tokens, skip_special_tokens=True)
