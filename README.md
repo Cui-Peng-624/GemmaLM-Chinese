@@ -86,8 +86,25 @@ response = generate_response(model, tokenizer, message_str)
 
 # 5. 评估与监控
 
-待完成，当前的想法请参考：[src/evaluate/README.md](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/evaluate/README.md)
+我们在自己构建的[验证集](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/data_processing/stage1/data_final/val_data.json)上评估了ppl，在ceval的[logic](https://huggingface.co/datasets/ceval/ceval-exam/viewer/logic)数据集上也进行了评估，结果如下：
 
-# 6. 未来改进方向
+在自己构建的验证集上：  
+基础模型PPL: 16.5727        
+微调后模型PPL: 3.8577                
+PPL改进比例: 76.72%                
+
+在ceval的logic数据集上：         
+基础模型的得分: 25            
+微调后模型的得分: 35.78431373            
+改进比例：43.14%       
+
+我们使用的是stage1微调后的模型，在评估时采用的都是normal推理模式，且由于资源限制，我们的模型效果并未达到最优，具体请参考[stage1_AdaLoRA.ipynb](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/fine-tuning/stage1_AdaLoRA.ipynb)中的 tensorboard 的输出记录。
+
+# 6. DPO
+
+我们的DPO目标特定为提高模型对用户要求只输出ABCD的遵守程度。具体请参考[RLHF/01.ipynb](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/RLHF/data_preparation/01.ipynb)
+
+
+# 7. 未来改进方向
 - RAG：但是我没想好往向量数据库储存什么数据，graphrag 在诗歌创作上是个不错的选择，但由于任务的限制，我们无法采用
-- RLHF：与 GPT 进行交互，强化模型对指令的遵从，这在我们没有 json mode 的情况下，是个不错的选择
+- RLHF：暂未考虑不同的prompt，具体来说，就是用户要求模型只回答ABCD四个选项有很多不同但类似的prompt，我们暂时不考虑，走完整个流程先
