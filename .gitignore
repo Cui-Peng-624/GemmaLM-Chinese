@@ -3,6 +3,6 @@
 docs/
 src/data_processing/droped/
 src/evaluate/droped/
-src/RLHF/data_processing/ceval-exam/dev/
-src/RLHF/data_processing/ceval-exam/test/
-src/RLHF/data_processing/ceval-exam/val/
+src/RLHF/data_preparation/ceval-exam/dev/
+src/RLHF/data_preparation/ceval-exam/test/
+src/RLHF/data_preparation/ceval-exam/val/
