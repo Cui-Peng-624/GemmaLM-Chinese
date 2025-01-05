@@ -102,7 +102,7 @@ PPL改进比例: 76.72%
 
 # 6. DPO
 
-我们的DPO目标特定为提高模型对用户要求只输出ABCD的遵守程度。数据集构建请参考[RLHF/data_preparation/data_preparation.ipynb](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/RLHF/data_preparation/data_preparation.ipynb)，代码请参考[RLHF/DPO/dpo.ipynb](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/RLHF/data_preparation/dpo.ipynb)
+我们的DPO目标特定为提高模型对用户要求只输出ABCD的遵守程度。数据集构建请参考[RLHF/data_preparation/data_preparation.ipynb](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/RLHF/data_preparation/data_preparation.ipynb)，代码请参考[RLHF/DPO/dpo.ipynb](https://github.com/Cui-Peng-624/GemmaLM-Chinese/blob/main/src/RLHF/DPO/dpo.ipynb)
 
 
 # 7. 未来改进方向
